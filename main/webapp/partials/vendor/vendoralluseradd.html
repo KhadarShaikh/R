@@ -1,0 +1,51 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-offset-3 col-md-6">
+			<h3>All Users</h3>
+			<form name="user" class="frmbgclr" ng-submit="userall()">
+				<div class="form-group">
+					<label class="control-label" for="fname">First Name</label><span class="red">*</span>:
+                    <input type="text" class="form-control" name="firstname" ng-model="alluser.firstname" placeholder="Enter Your First Name" maxlength="20" required> 
+                    <span class="help-block" ng-show="user.firstname.$dirty && user.firstname.$error.required">Required.!</span>
+                    <span class="help-block" ng-show="frm.firstname.$error.pattern && frm.firstname.$invalid ">Enter Valid Name.!</span>
+				</div>
+				<div class="form-group">
+					<label class="control-label" for="lname">Last Name</label><span class="red">*</span>:
+                    <input type="text" class="form-control" name="lastname" ng-model="alluser.lastname" placeholder="Enter Your Last Name" maxlength="20" required> 
+                    <span class="help-block" ng-show="user.lastname.$dirty && user.lastname.$error.required">Required.!</span>
+                     <span class="help-block" ng-show="frm.lastname.$error.pattern && frm.lastname.$invalid ">Enter Valid Name.!</span>
+				</div>
+				<div class="form-group">
+					<label class="control-label" for="mobile">Mobile No</label><span class="red">*</span>:
+					<input type="text" class="form-control" name="mobile" ng-model="alluser.mobile" placeholder="Enter your Mobile No" ng-pattern="/^[6-9][0-9]{9}$/" maxlength="10" required>
+					<span class="help-block" ng-show="user.mobile.$dirty && user.mobile.$error.required">Required.!</span>
+					 <span class="help-block" ng-show="frm.mobile.$error.pattern && frm.mobile.$invalid ">Enter Valid Mobile Number.!</span>
+				</div>
+				<div class="form-group">
+					<label class="control-label" for="email">Email</label><span class="red">*</span>:
+					<input type="email" class="form-control" name="email" ng-model="alluser.username" placeholder="Enter your Mail ID" ng-pattern="/^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/" required>
+					<span class="help-block" ng-show="user.email.$dirty && user.email.$error.required">Required.!</span>
+					 <span class="help-block" ng-show="frm.email.$error.pattern && frm.email.$invalid ">Enter Valid E-mail ID..!</span>
+				</div>
+				<div class="form-group">
+					<label class="control-label" for="password">Password</label><span class="red">*</span>:
+					<input type="password" class="form-control" name="password" ng-model="alluser.password" palceholder="Enter your Password" maxlength="10"required>
+					<span class="help-block" ng-show="user.password.$dirty && user.password.$error.required">Required.!</span>
+					 <span class="help-block" ng-show="frm.password.$error.pattern && frm.password.$invalid ">Enter Valid Password.!</span>
+				</div>
+                <div class="form-group">
+                	<b>Role Name</b><span class="red">*</span>:
+                	<label ng-repeat="role in alluser1">
+                		<input type="checkbox" name="rolename" data-checklist-model="alluser.roleMapper" data-checklist-value="role" > {{role.roleName}} &nbsp;
+						<span class="help-block" ng-show="user.rolename.$dirty && user.rolename.$invalid">Required.!</span>
+                	</label>
+                </div>
+                <b class="text-center"><span class="red">* fields are mandatory</span></b>
+                <div class="form-group pull-right">
+                          <button type="submit" class="btn btn-primary" ui-sref="vendor.alluserlist" >Back</button>
+                          <button type="submit" class="btn btn-primary" ng-disabled="user.$invalid" >Submit</button>
+                          </div> 
+			</form>
+		</div>
+	</div>
+</div>

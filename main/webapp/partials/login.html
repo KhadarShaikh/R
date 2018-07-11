@@ -1,0 +1,79 @@
+<div class="">
+		<nav class="navbar navbar-inverse navbar-boottom">
+			<div class="container">
+				<div class="navbar-header">
+					
+					<a class="navbar-brand"><b>Resource Adda</b></a>
+				</div>
+					<ul class="nav navbar-nav">
+						<li class="dropdown active "><a class="dropdown-toggle" data-toggle="dropdown" >Companies <span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a >Browse By Companies</a></li>
+						<li><a ui-sref="aboutCustomers">About Customers</a></li>
+					</ul>
+						</li>
+      
+      
+      
+						<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Vendors <span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a >Browse By Vendors</a></li>
+						<li><a ui-sref="aboutVendors">About Vendors</a></li>
+					</ul>
+						</li>
+						<li><a ui-sref="Plan">Subscription Plans</a></li>
+						<li><a ui-sref="Service">Services</a></li>
+						<li><a ui-sref="aboutRA">About Resource Adda</a></li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+					<!-- 	<li><a ui-sref="Register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li> -->
+						<li><a ui-sref="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+					</ul>
+			</div>
+		</nav>
+		
+		
+			<div class="container-fulid backgroundImage">
+				<div class="container">
+				<div class="row" >
+				<div class="col-sm-8">
+					<div class="resources">
+						<h2 class="resources-sol">RESOURCE ADDA</h2>
+						<div><h5 class="res">One Solution for All Your Requirements</h5>
+						</div>
+					</div>
+				</div>
+		
+		
+		
+		
+		
+		<div class="col-sm-4">
+		<form class="login-form" name="myForm">
+			<h1><b>LOGIN</b></h1>
+			<div class="form-group ">
+				<input type="email" class="form-control i1" placeholder="Email ID" id="UserName" ng-model="username" name="username" required>
+				<i class="fa fa-user"></i>
+				<span class="error" ng-show=" myForm.username.$touched && myForm.username.$invalid">Email is required.</span>
+			</div>
+			<div class="form-group log-status">
+				<input type="password" class="form-control i1" placeholder="Password" id="Passwod"  ng-model="password" name="password" required>
+				<i class="fa fa-lock"></i>
+				<span class="error" ng-show="myForm.password.$touched && myForm.password.$invalid"> Password is required.</span>
+			</div>
+				<span class="alert">Invalid Credentials</span>
+				<p> <a class="link" ui-sref="forgotpassword">Forgot Password?</a><p>
+				<button type="button" class="btn btn-primary btn-block" id="btn" ng-click="login()"  ng-disabled="myForm.$invalid" value="Signin">Log in</button>
+	 
+			<div class="form-group">
+				<p>Don't Have an account?<a ui-sref="Plan" style="color:#286090;"> Register Here</a></p> 
+			</div>
+    
+		</form>
+		</div>
+		</div>
+		</div>
+		</div>
+		
+
+  </div>

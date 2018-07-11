@@ -1,0 +1,40 @@
+<nav class="navbar navabar-default  navbar-fixed-top" id="header" >
+  <div class="container">
+    <div class="navbar-header" >   
+      <a class="navbar-brand headername"><i class="fa fa-users headername" aria-hidden="true"></i>&nbsp;&nbsp;Resource Adda</a>
+    </div>
+   
+    <ul class="nav navbar-nav pull-right">
+         <li  ui-sref-active="active"><a class="headername"   ui-sref=".dashboard">Dashboard</a></li>
+         <li  ui-sref-active="active"><a class="headername"   ui-sref=".RAlist">Registrations List </a></li>
+        <li  ui-sref-active="active"><a class="headername"  ui-sref=".plan">Plan Management</a></li>
+      <!--   <li  ui-sref-active="active"><a  class="headername"  ui-sref=".buynow" >Buy Plan</a></li> -->
+        <li  ui-sref-active="active"><a class="headername"  ui-sref=".postarequirementlist">Requirement</a></li>
+        <li ui-sref-active="active"><a  class="headername"  ui-sref=".resourcelist" > Resource</a></li>
+        <li ui-sref-active="active"><a class="headername"  ui-sref=".alluserlist" >All Users</a></li> 
+<!--         
+        <li ng-repeat='x in list'>
+   			  <a class="headername" ui-sref="{{x.uisref}}" >
+       			{{x.headerName}} </a>
+  		 </li> -->
+  		 
+      	<!-- <li><a class="headername"  ng-click="PlanGetById()" ui-sref=".subscription">Subscription</a></li>  -->
+        <li class="dropdown">
+		    <button class="btn btn-primary dropdown-toggle " style="background-color:#333333 !important;    margin-top: 10px !important;"  type="button" data-toggle="dropdown" style="">Master
+		    <span class="caret"></span></button>
+		    <ul class="dropdown-menu master_dropdown">
+		      <li><a ui-sref=".jobcategory" >Job Category</a></li>
+		      <li><a ui-sref=".Jobtype">Job Type</a></li>
+		      <li><a ui-sref=".JoinWithIn">Notice Period</a></li>
+		      <li><a ui-sref=".PrimarySkills">Primary Skills</a></li>
+		      <li><a ui-sref=".secondaryskill">Secondary Skill</a></li>
+		    </ul>
+	    </li>
+	   <li ng-controller="LoginCtrl"><a style="color:white !important;" href="#" ng-click="logout();"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+	  
+    </ul>
+   
+  </div>
+</nav>
+<div ui-view autoscroll="false"></div>
+<foot class="topfoot"></foot>

@@ -1,0 +1,96 @@
+.add-on {
+  border-left-width:0;left:-2px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+.add-on  {
+ box-shadow:none;
+ -webkit-box-shadow:none; 
+ border-color:#cccccc; 
+}
+.topfoot
+{
+	margin-top:15%;
+}
+.bord{
+   border:1px solid black; 
+   margin-top:20px;
+}
+.head{
+    color:#3638CB;
+}
+.profile{
+	color:#f7f7f7;
+}
+
+.colororange
+{
+	background-color:rgba(0,0,0,0.1);
+}
+.hor
+{
+	width:50%;
+	size:4px;
+	color:#f00;
+}
+.trans
+{
+	background-color:rgba(255,255,255,0.2) !important;
+	border-radius:5% !important;
+}
+.fon{
+	font-
+}
+.labl
+{
+	font-size:16px !important;
+}
+.val
+{
+	font-size:18px !important;
+}
+
+.borders{
+	border:1px solid #ddd ;
+	
+}
+
+.orange
+{
+	color:orange;
+}
+
+
+@media screen and (min-width: 992px) {
+    .invi {
+        display: none;
+    }
+    .bor
+{
+	margin-top:10px;
+	border-right:2px solid orange;
+}
+   .re{
+     margin-top:20%;
+     padding-bottom:15px;
+	padding-left:10% !important;
+	color:#666;
+	
+}
+}
+@media screen and (max-width: 992px) {
+    .hiden {
+        display: none;
+    }
+	
+	.pad
+	{
+	padding-left:10%;
+	}
+    .re{
+    border-bottom:2px solid orange;
+	padding-left:10% !important;
+	color:#666;
+	
+}
+}

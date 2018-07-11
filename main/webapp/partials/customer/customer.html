@@ -1,0 +1,32 @@
+
+<nav class="navbar navabar-default navbar-fixed-top" id="header">
+	<div class="container">
+		<div class="navbar-header">
+
+			<a class="navbar-brand headername" ui-sref=".dashboard"><i
+				class="fa fa-users headername" aria-hidden="true"></i>&nbsp;&nbsp;Resource
+				Adda</a>
+		</div>
+
+		<ul class="nav navbar-nav pull-right">
+		<li ui-sref-active="active"><a class="headername"   ui-sref="customer.dashboard">Dashboard</a></li> 
+		<li ui-sref-active="active"><a class="headername"   ui-sref="customer.postrequirement">Requirement</a></li> 
+		<li ui-sref-active="active"><a class="headername"  ui-sref="customer.resourcelist">All Resource</a></li> 		
+		 <li ui-sref-active="active"><a class="headername"  ui-sref="customer.alluserlist">All User</a></li>
+			<!-- <li ui-sref-active="active" ng-repeat="x in meneu"><a
+				class="headername" ui-sref="{{x.uisref}}">{{x.headerName}}</a></li> -->
+				
+				<li ui-sref-active="active"><a class="headername"  ng-click="PlanGetById()" ui-sref=".subscription">Subscription</a></li> 
+				<li ui-sref-active="active" ><a class="headername" ui-sref="customer.vendorpraposedresource">Vendor Proposed Resources</a></li>
+			<li ui-sref-active="active"><a style="color:#f8f8f8"
+				ui-sref="customer.customerlist({userId:id})"><span
+					class="	fa fa-user-circle-o "></span>&nbsp;{{model}} Profile</a></li>
+			<li ng-controller="LoginCtrl"><a class="headername" href="#"
+				ng-click="logout();"><span class="glyphicon glyphicon-log-in"></span>
+					Logout</a></li>
+		</ul>
+
+	</div>
+</nav>
+<div ui-view autoscroll="false"></div>
+<foot class="topfoot"></foot>

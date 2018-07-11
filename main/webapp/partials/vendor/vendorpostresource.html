@@ -1,0 +1,242 @@
+
+<div class="container m-t-50">
+	<div class="row sea">
+		<h4>Search Your Requirement :</h4>
+		<div class="col-sm-3">
+
+			<input type="text" class="form-control"
+				ng-model="search.primarySkills" placeholder="Skills">
+
+		</div>
+		<div class="col-sm-3">
+			<input type="text" class="form-control" ng-model="search.jobCategory"
+				placeholder="job Category">
+		</div>
+		<div class="col-sm-2">
+			<input type="text" class="form-control" ng-model="search.jobLocation"
+				placeholder="Location">
+		</div>
+		<div class="col-sm-2">
+			<input type="text" class="form-control" ng-model="search.experience"
+				placeholder="Experience">
+		</div>
+
+		<div class="col-sm-2">
+			<button type="button" class="btn btn-primary">
+				<i class="fa fa-search"></i>&nbsp;Search
+			</button>
+		</div>
+
+	</div>
+	<br>
+
+	<div class="row">
+	
+		<div class="col-sm-3">		
+						
+			<div class="">
+				<uib-accordion close-others="oneAtATime">
+                <div uib-accordion-group class="panel-default"
+					is-open="status.Skills">
+					<uib-accordion-heading> Skills <i
+						class="pull-right glyphicon"
+						 ng-class="{'glyphicon glyphicon-minus': status.Skills, 'glyphicon glyphicon-plus': !status.open}" ng-click="allListsfunc()"></i>
+					</uib-accordion-heading>
+					<ul class="list-group" ng-repeat="s in skillslist">
+					   <input type="checkbox" checklist-model="search1.skills" checklist-value="s" ng-click="search1()"> {{s}} &nbsp;
+					</ul>
+				</div>
+				
+				<div uib-accordion-group class="panel-default" is-open="status.Job ">
+					<uib-accordion-heading> Job Category <i
+						class="pull-right glyphicon"
+						ng-class="{'glyphicon glyphicon-minus': status.Job , 'glyphicon glyphicon-plus': !status.open}" ng-click="jobcategoryfunc()"></i>
+					</uib-accordion-heading>
+					<ul class=" list-group" ng-repeat="c in Jobc">
+					 <input type="checkbox" checklist-model="job.jobCategory" checklist-value="c" ng-click="search1()"> {{c}} &nbsp;
+					</ul>
+				</div>
+				<div uib-accordion-group class="panel-default"
+					is-open="status.Location">
+					<uib-accordion-heading> Location<i
+						class="pull-right glyphicon"
+						ng-class="{'glyphicon glyphicon-minus': status.Location, 'glyphicon glyphicon-plus': !status.open}" ng-click="locationfunc()"></i>
+					</uib-accordion-heading>
+
+					<ul class=" list-group" ng-repeat="x in location">
+					    <input type="checkbox" checklist-model="location.city" checklist-value="x"  ng-click="search1()"> {{x}} &nbsp;
+					</ul>
+				</div>			
+				<div uib-accordion-group class="panel-default"
+					is-open="status.Experience">
+					<uib-accordion-heading> Experience <i
+						class="pull-right glyphicon"
+						ng-class="{'glyphicon glyphicon-minus': status.Experience, 'glyphicon glyphicon-plus': !status.open}" ng-click="experiencefunc()"></i>
+					</uib-accordion-heading>
+					<ul class=" list-group" ng-repeat="e in experience">
+					<input type="checkbox" checklist-model="exp.totalExperience" checklist-value="e"  ng-click="search1()"> {{e}}years &nbsp;
+				
+					</ul>
+				</div>
+			 	<div uib-accordion-group class="panel-default"
+					is-open="status.company">
+					<uib-accordion-heading> Top Customers <i
+						class="pull-right glyphicon"
+						ng-class="{'glyphicon glyphicon-minus': status.company, 'glyphicon glyphicon-plus': !status.open}" ng-click="companyfunc()"></i>
+					</uib-accordion-heading>
+					<ul class=" list-group" ng-repeat="tc in company">
+						<input type="checkbox" checklist-model="customer1.customer" checklist-value="tc" ng-click="search1()"> {{tc}} &nbsp;
+						
+					</ul>
+				</div>
+				<div uib-accordion-group class="panel-default"
+					is-open="status.company1">
+					<uib-accordion-heading> Budget <i
+						class="pull-right glyphicon"
+						ng-class="{'glyphicon glyphicon-minus': status.company, 'glyphicon glyphicon-plus': !status.open}" ng-click="budgetfunc()"></i>
+					</uib-accordion-heading>
+					<ul class=" list-group" ng-repeat="bc in budget">
+						<input type="checkbox" checklist-model="budget1.budget" checklist-value="bc" ng-click="search1()"> {{bc}} &nbsp;
+						
+					</ul>
+				</div>
+				<br>
+				<center>
+					<button type="submit" class="btn primary">Clear filters</button>
+					<button type="submit" class="btn primary" ng-click="search1(search1)">Submit</button>
+				</center>
+			</div> 
+			
+		</div>	
+		
+		<div class="col-sm-8">
+			<div ng-repeat="post in postresource | filter:search">
+				<div class="panel panel-default">
+					<div class="" style="background-color:">
+						<label class="l2" style="color: #000"><span
+							class="fa fa-briefcase"></span>&nbsp;&nbsp;{{post.jobCategory}}</label> <a
+							type="button" class="btn btn-primary butn pull-right"
+							ui-sref="vendor.postresourceById({localId:localid,resourceById:post.registrationId,objectid:post._id})"><i
+							class="fa fa-arrow-circle-right"></i>post</a>
+					</div>
+					<div class="panel-body" style="background-color: #fff">
+						<div class="row">
+							<div class="col-sm-11 l3">
+								<div class="row l4">
+									<div class="col-sm-6">
+										<div class="row">
+											<div class="col-sm-7">
+												<label><span class="fa fa-building"></span>&nbsp;&nbsp;Company
+													Name :</label>
+											</div>
+											<div class="col-sm-5">{{ post.companyName}}</div>
+										</div>
+									</div>
+									<div class="col-sm-6">
+										<div class="row">
+											<div class="col-sm-6">
+												<label><span class="fa fa-black-tie"></span>&nbsp;&nbsp;Job
+													Type :</label>
+											</div>
+											<div class="col-sm-6">{{post.jobTitle}}</div>
+										</div>
+									</div>
+
+								</div>
+
+								<div class="row l4">
+									<div class="col-sm-6">
+										<div class="row">
+											<div class="col-sm-7">
+												<label><span class="fa fa-briefcase"></span>&nbsp;&nbsp;
+													Experience:</label>
+											</div>
+											<div class="col-sm-5">{{post.experience}}</div>
+										</div>
+									</div>
+									<div class="col-sm-6">
+										<div class="row">
+											<div class="col-sm-6">
+												<label><span class="fa fa-map-marker"></span>&nbsp;&nbsp;Job
+													Location :</label>
+											</div>
+											<div class="col-sm-6">{{post.jobLocation}}</div>
+										</div>
+									</div>
+
+								</div>
+								<div class="row l4">
+									<div class="col-sm-6">
+										<div class="row">
+											<div class="col-sm-7">
+												<label><span class="fa fa-users"></span>&nbsp;&nbsp;No
+													of Resources :</label>
+											</div>
+											<div class="col-sm-5">{{post.resources}}</div>
+										</div>
+									</div>
+									<div class="col-sm-6">
+										<div class="row">
+											<div class="col-sm-6">
+												<label><span class="fa fa-calendar"></span>&nbsp;&nbsp;Join
+													Within :</label>
+											</div>
+											<div class="col-sm-6">{{post.joinWithin}}</div>
+										</div>
+									</div>
+
+								</div>
+
+								<div class="row l4">
+									<div class="col-sm-12">
+										<div class="row">
+											<div class="col-sm-4">
+												<label><span class="fa fa-wpforms"></span>&nbsp;&nbsp;
+													Job Description :</label>
+											</div>
+											<div class="col-sm-8">{{post. description}}</div>
+										</div>
+									</div>
+
+
+
+								</div>
+								<div class="row l4">
+									<div class="col-sm-12">
+										<div class="row">
+											<div class="col-sm-4">
+												<label><span class="fa fa-tags"></span>&nbsp;&nbsp;Skills
+													:</label>
+											</div>
+											<div class="col-sm-8">{{post.primarySkills}}</div>
+										</div>
+
+
+
+									</div>
+								</div>
+
+
+
+
+								<div class="col-sm-1"></div>
+							</div>
+
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+	</div>

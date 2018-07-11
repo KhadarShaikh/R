@@ -1,0 +1,31 @@
+<nav class="navbar navabar-default  navbar-fixed-top" id="header">
+	<div class="container">
+		<div class="navbar-header">
+			<a class="navbar-brand headername"><i
+				class="fa fa-users headername" aria-hidden="true"></i>&nbsp;&nbsp;Resource
+				Adda</a>
+		</div>
+		<ul class="nav navbar-nav pull-right">
+		<li ui-sref-active="active"><a class="headername"   ui-sref="vendor.dashboard">Dashboard</a></li> 
+			<li ui-sref-active="active"><a class="headername"  ui-sref="vendor.resourcelist">Resource</a></li> 
+		<li ui-sref-active="active"><a class="headername"   ui-sref="vendor.requirementlist">All Requirement</a></li> 
+	
+		<li ui-sref-active="active"><a class="headername"   ui-sref="vendor.alluserlist">All user</a></li> 
+			<!--  <li ui-sref-active="active" ng-repeat="x in menu"><a class="headername" ui-sref="{{x.uisref}}">{{x.headerName}}</a></li> -->
+	    <li ui-sref-active="active"><a class="headername"
+				ui-sref="vendor.customerrequested">Customer Requested Resources</a></li>
+			<li ui-sref-active="active"><a class="headername"
+				ng-click="PlanGetById()" ui-sref=".subscription">Subscription</a></li>
+			<li ui-sref-active="active"><a style="color: #f8f8f8"
+				ui-sref="vendor.vendorlist({userId:id})"><span
+					class="	fa fa-user-circle-o "></span>&nbsp;{{model}} Profile</a></li>
+			<li ng-controller="LoginCtrl"><a class="headername" href="#"
+				ng-click="logout();"><span class="glyphicon glyphicon-log-in"></span>
+					Logout</a></li>
+		</ul>
+
+	</div>
+</nav>
+<div ui-view autoscroll="false" class="relate"></div>
+
+<foot class="topfoot"></foot>

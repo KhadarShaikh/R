@@ -1,0 +1,88 @@
+
+<div class="container-fluid m-t-50">
+
+<!--	<div class="row sea">
+	   <div class="container">		
+	  <h4 style="color: #337ab7">Search Your Requirement :</h4>
+		<div class="col-sm-3">
+
+			<oi-select ng-model="search.skills" multiple oi-options="v for v in skills"  placeholder="Skills Ex:html"required>
+
+              </oi-select>
+		</div>
+		<div class="col-sm-3">
+			<input type="text" class="form-control" ng-model="search.jobCategory"
+				placeholder="job Category">
+		</div>
+		<div class="col-sm-2">
+			<input type="text" class="form-control" ng-model="search.jobLocation"
+				placeholder="Location">
+		</div>
+		<div class="col-sm-2">
+			<input type="text" class="form-control" ng-model="search.experience"
+				placeholder="Experience">
+		</div>
+
+		<div class="col-sm-2">
+			<button type="button" class="btn btn-primary">
+				<i class="fa fa-search"></i>&nbsp;Search
+			</button>
+		</div>
+      </div>
+</div> -->
+	
+
+	<div class="container ">
+	<div class="col-md-offset-1 col-md-10 col-md-offset-1 bgcolor">
+		<h1 class="text-center heading">Requirement Summary</h1>
+		<div class=" col-md-offset-1 col-md-8">
+
+
+			<h3 class="fon color">
+				<i class="fa fa-briefcase color"></i>&nbsp;{{postrequirement.jobCategory}}({{postrequirement.yearsOfExperience}}-{{postrequirement.monthsOfExperience}})
+			</h3>
+			<h4 class="fon color">
+				<i class="fa fa-building color"></i>&nbsp;{{postrequirement.companyName}} {{postrequirement.jobLocation}} {{postrequirement.jobId}}
+			</h4>
+			<h5 class="fon color">
+				<i class="fa fa-rupee color"></i>&nbsp;{{postrequirement.budget}}/{{postrequirement.rateType}}+{{postrequirement.gst}}
+			</h5>
+			<!-- <button type="button" class="btn btn-success">
+				<i class="glyphicon glyphicon-ok "></i>&nbsp;Apply Now
+			</button>
+			<button type="button" class="btn btn-primary">
+				<i class="fa fa-search"></i>&nbsp;Search Resource
+			</button> -->
+			 <button type="button" class="btn btn-danger" ui-sref="vendor.requirementlist">
+				<i class="	glyphicon glyphicon-share"></i>&nbsp;Go Back
+			</button>
+			<hr>
+
+
+			<h4  class="jd">Job Description</h4>
+
+				<p class="para"><i class="fa fa-briefcase color"></i>&nbsp;&nbsp;Job Category : {{postrequirement.jobCategory}}</p>
+				<p class="para"><i class="fa fa-bank color"></i>&nbsp;&nbsp;Company Name : {{postrequirement.companyName}}</p>
+				<p class="para"><i class="glyphicon glyphicon-briefcase color"></i>&nbsp;&nbsp;Experience : {{postrequirement.yearsOfExperience}}-{{postrequirement.monthsOfExperience}}</p>
+				<p class="para"><i class="glyphicon glyphicon-map-marker color"></i>&nbsp;&nbsp;Job Location : {{postrequirement.jobLocation}}</p>
+				<p class="para"><i class="fa fa-rupee color"></i>&nbsp;&nbsp;Budget : {{postrequirement.budget}}/{{postrequirement.rateType}}+{{postrequirement.gst}}</p>
+				<p class="para"><i class="fa fa-black-tie color"></i>&nbsp;Job-Type : {{postrequirement.jobType}}</p>
+				<p class="para"><i class="fa fa-money color"></i>&nbsp;&nbsp;Rate Type : {{postrequirement.rateType}}</p>
+				<p class="para"><i class="fa fa-users color"></i>&nbsp;&nbsp;No of Resources : {{postrequirement.resources}}</p>
+				<p class="para"><i class="fa fa-calendar color"></i>&nbsp;&nbsp;Join Within : {{postrequirement.joinWithin}}</p>
+				<p class="para"><i class="fa fa-graduation-cap color"></i>&nbsp;&nbsp;Higher Qualification Required : {{postrequirement.qualifications}}</p>
+			
+			<hr>
+			<h4 class="jd">Roles and Responsibility</h4>
+
+			<p class="para">{{postrequirement.description}}</p>
+			<hr>
+			<h4 class="jd">KeySkills Required</h4>
+
+			<p class="para"><i class="fa fa-tags color"></i>&nbsp;&nbsp;Skills:&nbsp;{{postrequirement.primarySkills}},{{postrequirement.secondarySkills}}</p>
+			<hr>
+
+		</div>
+	</div>
+</div>
+</div>

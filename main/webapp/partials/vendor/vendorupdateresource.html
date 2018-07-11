@@ -1,0 +1,407 @@
+
+<div class="container m-t-50">
+	<div class="row">
+		<div class="col-md-offset-3 col-md-6">
+			<center>
+				<h3>Update Your Resoure</h3>
+			</center>
+			<hr>
+			<form name="frm" class="frmbgclr" ng-submit="updateResource();">
+				<div class="animate-switch-container" ng-switch on="stage"
+					ng-class="{forward: direction, backward:!direction}">
+					<!-- <div class="form-group">
+                  <label class="control-label">Company Name</label>
+                      <select class="form-control" ng-options="x for x in companyNameList" ng-change="companyid()" ng-model="companyName1" name="companyName" required>
+                        <option value="">Select Company Name</option>
+                      </select>
+                  <span class="help-block" ng-show="frm.companyName.$dirty && frm.companyName.$invalid">Please select company Name..!!</span>
+                </div> -->
+					<div class="animate-switch" ng-switch-default>
+						<div>
+							<h3>Resource Details</h3>
+							<br>
+							<ul class="bootstrapWizard form-wizard ">
+								<li class="active" data-target="#step1"><span class="step"><span
+										class="fa fa-user-circle-o"></span></span></li>
+								<li data-target="#step2" class=""><span class="step"><span
+										class="fa fa-briefcase"></span></span></li>
+								<li data-target="#step3" class=""><span class="step"><span
+										class="glyphicon glyphicon-map-marker"></span></span></li>
+								<li data-target="#step4" class=""><span class="step"><span
+										class="glyphicon glyphicon-ok"></span></span></li>
+
+							</ul>
+						</div>
+						<br> <input type="hidden" name="description"
+							ng-model="resource.registrationId" /><br>
+						<br>
+						<div class="form-group">
+							<label class="control-label" for="name">Name</label><span
+								class="red">*</span>:
+							<div class="row">
+								<div class="col-md-6 col-sm-6 col-xs-6">
+									<input type="text" class="form-control" name="fname"
+										ng-model="resource.firstName" placeholder="First Name"
+										ng-pattern="/^[a-zA-Z]{1,20}$/" required> <span
+										class="help-block"
+										ng-show="frm.fname.$dirty && frm.fname.$error.required">Required.!</span>
+									<span class="help-block"
+										ng-show="frm.fname.$error.pattern && frm.fname.$invalid ">Use
+										only alphabetical</span>
+								</div>
+								<div class="col-md-6 col-sm-6 col-xs-6">
+									<input type="text" class="form-control" name="lname"
+										ng-pattern="/^[a-zA-Z]{1,15}$/" ng-model="resource.lastName"
+										placeholder="Last Name" required> <span
+										class="help-block"
+										ng-show="frm.lname.$dirty && frm.lname.$error.required">Required.!</span>
+									<span class="help-block"
+										ng-show="frm.lname.$error.pattern && frm.lname.$invalid ">Use
+										only alphabetical</span>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label" for="gender">Gender</label><span
+								class="red">*</span>: <select class="form-control"
+								ng-options="x for x in gender" ng-model="resource.gender"
+								name="gender" required>
+								<option value="">Select Gender</option>
+							</select> <span class="help-block"
+								ng-show="frm.gender.$dirty && frm.gender.$invalid">Please
+								select gender..!!</span>
+						</div>
+						<div class="form-group">
+							<label class="control-label" for="DOB">Date of Birth</label><span
+								class="red">*</span>: <input type="date" class="form-control"
+								ng-model="resource.dateOfBirth" name="dateofbirth"
+								placeholder="MM/DD/YYYY" required> <span
+								class="help-block"
+								ng-show="frm.dateofbirth.$dirty && frm.dateofbirth.$invalid">Please
+								select Date of Birth..!!</span>
+						</div>
+
+						<div class="form-group">
+							<label class="control-label" for="email">Email Id</label><span
+								class="red">*</span>:<input type="email" class="form-control"
+								name="email" ng-model="resource.emailId"
+								ng-pattern="/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/"
+								placeholder="Enter your Email ID" required> <span
+								class="help-block"
+								ng-show="frm.email.$dirty && frm.email.$error.required">Required.!</span>
+							<span class="help-block"
+								ng-show="frm.email.$error.pattern && frm.email.$invalid">Enter
+								valid email ID</span>
+						</div>
+						<div class="form-group">
+							<label class="control-label" for="mobile">Mobile Number</label><span
+								class="red">*</span>: <input type="text" class="form-control"
+								name="mobile" ng-model="resource.mobileNumber"
+								ng-pattern="/^[6-9][0-9]{9}$/" maxlength="10"
+								placeholder="Enter your Mobile No" required> <span
+								class="help-block"
+								ng-show="frm.mobile.$dirty && frm.mobile.$error.required">Required.!</span>
+							<span class="help-block"
+								ng-show="frm.mobile.$error.pattern && frm.mobile.$invalid ">Enter
+								Valid Phone Number..!</span>
+						</div>
+						<button type="button" class="btn btn-danger" ui-sref="vendor.resourcelist">
+				<i class="	glyphicon glyphicon-share"></i>&nbsp;Go Back
+			</button>
+						<button type="button" class="btn btn-primary"
+							ng-click="next('stage1')">Next</button>
+					</div>
+
+					<div class="clearfix"></div>
+					<div class="animate-switch" ng-switch-when="stage1">
+						<div>
+							<h3>Professional Details</h3>
+							<br>
+							<ul class="bootstrapWizard form-wizard  b">
+								<li class="" data-target="#step1"><span class="step"><span
+										class="fa fa-user-circle-o"></span></span></li>
+								<li data-target="#step2" class="active"><span class="step"><span
+										class="fa fa-briefcase"></span></span></li>
+								<li data-target="#step3" class=""><span class="step"><span
+										class="glyphicon glyphicon-map-marker"></span></span></li>
+								<li data-target="#step4" class=""><span class="step"><span
+										class="glyphicon glyphicon-ok"></span></span></li>
+
+							</ul>
+						</div>
+						<br>
+							<div class="form-group">
+							<label class="control-label">Job Category</label><span
+								class="red">*</span>: <input type="text"
+								ng-model="resource.jobCategory" name="jobcategory"
+								id="jobcategory" class="form-control" list="job" required>
+
+							<span class="help-block"
+								ng-show="frm.jobcategory.$touched && frm.jobCategory.$pristine"></span>
+							<datalist id="job">
+								<option data-ng-repeat="x in jobcategory" value="{{x}}"></option>
+							</datalist>
+						</div>
+						
+						<div class="form-group">
+						<label class="control-label" for="experience">
+								Experience</label><span class="red">*</span>:
+								<div class="row">
+								<div class="col-sm-6">
+						<select  class="form-control" ng-options=" yr for yr in yearsOfExperience" ng-model="resource.yearsOfExperience" name="year" required>
+                       <!--  <option value="">Years</option> -->
+                </select>
+                <span class="help-block"
+								ng-show="frm.year.$dirty && frm.year.$invalid">Please
+								select Year of Experience.!!</span>
+                </div>
+                <div class="col-sm-6">
+                <select  class="form-control" ng-options="me for me in monthsOfExperience" ng-model="resource.monthsOfExperience" name="month" required>
+                       <!--  <option value="">Months</option> -->
+                    </select>
+                     <span class="help-block"
+								ng-show="frm.month.$dirty && frm.month.$invalid">Please
+								select Month of  Experience.!!</span>
+                    </div>
+                    
+						</div>
+						</div>
+						
+						
+						
+						<div class="form-group">
+							<label class="control-label">Primary Skills</label><span
+								class="red">*</span>: <select class="form-control"
+								ng-options="primary for primary in primaryskills" multiple
+								name="primarySkills" ng-model="resource.primarySkills">
+								<option> Select Primary Skills</option>
+							</select> {{skills}}
+						</div>
+						<div class="form-group">
+							<label class="control-label">Secondary Skills</label><span
+								class="red">*</span>: <select class="form-control"
+								ng-options="secondary for secondary in secondaryskills" multiple
+								name="secondarySkills" ng-model="resource.secondarySkills">
+							</select>
+						</div>
+						<!--  <div class="form-group">
+                              <label class="control-label" for="designation">Preferred Location</label>:<span class="red">*</span>
+                              <input type="text" class="form-control" name="preferredloc" ng-model="resource.preferredLocation"  placeholder="Enter your preferred location" required>
+                              <span class="help-block" ng-show="frm.preferredloc.$dirty && frm.preferredloc.$error.required">Required..!!</span>
+
+                            </div>-->
+					
+						<!--  <div class="form-group">
+                              <label class="control-label" for="designation">Rate (INR)</label>:<span class="red">*</span>
+                              <input type="text" class="form-control" name="rate" ng-model="resource.rate"  placeholder="Enter your Rate(INR)" required>
+                              <span class="help-block" ng-show="frm.rate.$dirty && frm.rate.$error.required">Required..!!</span>
+
+                            </div>-->
+                            <div class="row">
+                            <div class="form-group col-sm-6">
+							<label class="control-label" for="budget">Budget <span style="font-size:12px;color:#ff7800"><span></label><span
+								class="red">*</span>: <input type="text" class="form-control"
+								name="budget" ng-model="resource.budget" ng-pattern="/^[0-9]*$/" maxlength="6"
+								placeholder="Enter your Salary" required> <span class="help-block" ng-show="frm.budget.$invalid && frm.budget.$touched ||frm.budget.$invalid && frm.budget.$dirty"> 
+										<span ng-show="frm.budget.$error.required">Budget is required </span>
+										</span> <span ng-show="frm.budget.$error.pattern" class="help-block">Enter digits only</span>
+								
+
+						</div>
+						<div class="form-group col-sm-6">
+							<label class="control-label" for="rate">Rate (INR)</label><span
+								class="red">*</span>: <select class="form-control"
+								ng-options="r for r in Rate" ng-model="resource.rate"
+								name="rate" required>
+								<option value="">Select Your Rate</option>
+							</select> <span class="help-block"
+								ng-show="frm.rate.$dirty && frm.rate.$error.required">Required..!!</span>
+						</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label" for="relocate">GST
+								</label><span class="red">*</span>:
+								<label for="chkPassport"> 
+								 <input type="radio" class="size" ng-model="resource.gst" value="Excluding GST" name="gst" /> Excluding GST &nbsp;&nbsp;
+								<input type="radio" class="size"  ng-model="resource.gst" Value="Including GST"name="gst"  />Including GST
+						</label>
+								 <span class="help-block"
+								ng-show="frm.relocate.$dirty && frm.relocate.$invalid">Please
+								select GST option.!!</span>
+						</div>
+						<button type="button" class="btn btn-info" ng-click="back('')">Back</button>
+						<button type="button" class="btn btn-primary"
+							ng-click="next('stage2')">Next</button>
+					</div>
+					<div class="clearfix"></div>
+					<div class="animate-switch" ng-switch-when="stage2">
+						<div>
+							<h3>Address Details</h3>
+							<br>
+							<ul class="bootstrapWizard form-wizard c">
+								<li class="" data-target="#step1"><span class="step"><span
+										class="fa fa-user-circle-o"></span></span></li>
+								<li data-target="#step2" class=""><span class="step"><span
+										class="fa fa-briefcase"></span></span></li>
+								<li data-target="#step3" class="active"><span class="step"><span
+										class="glyphicon glyphicon-map-marker"></span></span></li>
+								<li data-target="#step4" class=""><span class="step"><span
+										class="glyphicon glyphicon-ok"></span></span></li>
+
+							</ul>
+							<br>
+							<br>
+							<br>
+						</div>
+						<!-- <div class="form-group">
+							<label class="control-label" for="relocate">Willing to
+								Relocate</label>:<span class="red">*</span> <select class="form-control"
+								ng-options="relo for relo in relocate"
+								ng-model="resource.relocate" name="relocate" required>
+								<option value="">Select Current Location:</option>
+							</select> <span class="help-block"
+								ng-show="frm.relocate.$dirty && frm.relocate.$invalid">Please
+								select Relocate option.!!</span>
+						</div> -->
+						<div class="form-group">
+							<label class="control-label" for="relocate">Willing to
+								Relocate</label><span class="red">*</span>:
+								<label for="chkPassport">  
+					 	<input type="radio" ng-model="resource.relocate" class="size" value="Yes" name="Passport" ng-click="ShowPassport('Y')"/> Yes &nbsp;&nbsp;
+						<input type="radio" class="size"  ng-model="resource.relocate" Value="No"name="Passport" ng-click="ShowPassport('N')" />No
+						</label>
+								 <span class="help-block"
+								ng-show="frm.relocate.$dirty && frm.relocate.$invalid">Please
+								select Relocate option.!!</span>
+						</div> 
+								<div class="form-group" ng-show="IsVisible">
+							<label class="control-label" for="preferredLocation">Preferred
+								Location</label><span class="red">*</span>: <select class="form-control"
+								ng-options="pl for pl in preferredLocation" multiple="true"
+								ng-model="resource.preferredLocation" name="preferredloc"
+								required>
+								<option value="">Select Preferred Location</option>
+							</select> <span class="help-block"
+								ng-show="frm.preferredloc.$dirty && frm.preferredloc.$error.required">Required..!!</span>
+						</div>
+						
+						<div class="form-group">
+							<label class="control-label" for="avaliability">Availability(Notice
+								Period)</label><span class="red">*</span>: <select class="form-control"
+								ng-options="avi for avi in avaliability"
+								ng-model="resource.availability" name="avaliability" required>
+								<option value="">Select Availability</option>
+							</select> <span class="help-block"
+								ng-show="frm.avaliability.$dirty && frm.avaliability.$invalid">Please
+								select Availability.!!</span>
+						</div>
+						<div class="form-group">
+							<label class="control-label" for="currentLocation">Current
+								Location</label><span class="red">*</span>: <select class="form-control"
+								ng-options="exp for exp in currentLocation"
+								ng-model="resource.currentLocation" name="currentLocation"
+								required>
+								<option value="">Select Current Location</option>
+							</select> <span class="help-block"
+								ng-show="frm.currentLocation.$dirty && frm.currentLocation.$invalid">Please
+								select Current Location.!!</span>
+						</div>
+				
+						
+						<!-- <div class="form-group">
+                              <label class="control-label" for="state">State</label>:<span class="red">*</span>
+                              <input type="text" class="form-control" name="state" ng-model="resource.state" placeholder="Enter Your State" required>
+                              <span class="help-block" ng-show="frm.state.$dirty && frm.state.$error.required">Required..!</span>
+                            </div>
+                            <div class="form-group">
+                              <label class="control-label" for="country">Country</label>:<span class="red">*</span>
+                              <input type="text" class="form-control" name="country" ng-model="resource.country" placeholder="Enter Your Country" required>
+                              <span class="help-block" ng-show="frm.country.$dirty && frm.country.$error.required">Required..!</span>
+                            </div>-->
+
+
+						<div class="form-group">
+                            <label class="control-label" for="state">State</label><span class="red">*</span>:
+                            <select class="form-control" ng-options="s for s in States" ng-model="resource.state" name="state" required>
+                                <option value="">Select Your State</option>
+                            </select>
+                            <span class="help-block" ng-show="frm.state.$dirty && frm.state.$invalid">Please select your State!!</span>
+                        	</div>
+                        	<div class="form-group">
+                            <label class="control-label" for="country">Country</label><span class="red">*</span>:
+                            <select class="form-control" ng-options="c for c in Countries" ng-model="resource.country" name="country" required>
+                                <option value="">Select Your Country</option>
+                            </select>
+                            <span class="help-block" ng-show="frm.country.$dirty && frm.country.$invalid">Please select your Country!!</span>
+                        	</div>
+						<b class="text-center"><span class="red">* fields are mandatory</span></b>
+						<button type="button" class="btn btn-info"
+							ng-click="back('stage1')">Back</button>
+						<button type="button" class="btn btn-primary"
+							ng-click="next('stage3')">Next</button>
+					</div>
+					<div class="animate-switch" ng-switch-when="stage3">
+						<div>
+							<h3>Resource Summary</h3>
+							<br>
+							<ul class="bootstrapWizard form-wizard c">
+								<li class="" data-target="#step1"><span class="step"><span
+										class="fa fa-briefcase"></span></span></li>
+								<li data-target="#step2" class=""><span class="step"><span
+										class="fa fa-tags"></span></span></li>
+								<li data-target="#step3" class=""><span class="step"><span
+										class="fa fa-users"></span></span></li>
+								<li data-target="#step4" class="active"><span class="step"><span
+										class="glyphicon glyphicon-ok"></span></span></li>
+
+							</ul>
+							<br>
+							<br>
+							<br>
+						</div>
+
+						<span class="fa fa-user-circle-o"></span>&nbsp;&nbsp;<label
+							class="control-label">Name</label>:<span>{{resource.firstName}}&nbsp;{{resource.lastName}}
+							</p>
+							<br> <span class="glyphicon glyphicon-envelope"></span>&nbsp;&nbsp;<label
+							class="control-label">Email Id</label>:<span>{{resource.emailId}}
+								</p>
+								<br> <span class="fa fa-mobile"></span>&nbsp;&nbsp;<label
+								class="control-label">Mobile Number</label>:<span>{{resource.mobileNumber}}
+									</p>
+									<br> <span class="fa fa-briefcase"></span>&nbsp;&nbsp;<label
+									class="control-label">Total Experience</label>:<span>{{resource.yearsOfExperience}}-{{resource.monthsOfExperience}}
+										</p>
+										<br> <span class="fa fa-map-marker"></span>&nbsp; &nbsp;<label
+										class="control-label">Current Location</label>:<span>{{resource.currentLocation}}
+											</p>
+											<br> <span class="glyphicon glyphicon-calendar"></span>&nbsp;&nbsp;<label
+											class="control-label">Availability(Notice Period)</label>:<span>{{resource.availability}}
+												</p>
+												<br> <span class="fa fa-black-tie"></span>&nbsp;&nbsp;<label
+												class="control-label">Job Category</label>:<span>{{resource.jobCategory}}
+													</p>
+													<br> <span class="glyphicon glyphicon-tags"></span>&nbsp;&nbsp;<label
+													class="control-label">Key Skills</label>:<span>{{resource.primarySkills}}{{resource.secondaryskills}}
+														</p>
+														<br> <span class="glyphicon glyphicon-screenshot"></span>&nbsp;&nbsp;
+														<label class="control-label">Preferred Location</label>:<span>{{resource.preferredLocation}}
+															</p>
+															<br> <span class="fa fa-rupee"></span>&nbsp;&nbsp;<label
+															class="control-label">Rate (INR)</label>:<span>{{resource.rate}}
+																</p>
+																<br>
+
+																<div class="form-group pull-right">
+																	<button type="button" class="btn btn-info"
+																		ng-click="back('stage2')">Back</button>
+																	<button type="submit" class="btn btn-primary butn"
+																		ng-disabled="user.$invalid">Submit</button>
+																</div>
+					</div>
+				</div>
+			</form>
+		</div>
+
+	</div>
+</div>

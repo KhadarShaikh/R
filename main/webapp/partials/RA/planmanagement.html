@@ -1,0 +1,54 @@
+<div class="container">
+<div class="row">
+	<center>
+		<h3 style="color: #000">List of Plans </h3>
+</center>
+<form class="form-inline text-center">
+          			<div class="input-group">
+            			<input type="text" ng-model="plansearch" class="form-control" size="50" placeholder="Search Here" required>
+            			<div class="input-group-btn">
+            				<button type="button" class="btn btn-primary butn">Search</button>
+     					</div>
+   					</div>
+  				</form>
+	
+	 <div  class="container m-t-50">
+                <div class="table-responsive m-t-30">
+                	<table  class="table text-center">
+						    <thead>
+						        <th>S.No</th>
+						        <th>Rate</th>
+						        <th>Validity</th>
+						        <th>Vacancy</th>						        				       
+								<th>CV</th>
+								<th>Email</th>
+								<th>Status</th>
+								<th>Edit</th>
+						    </thead>
+						    <tbody>
+						        <tr ng-repeat="plan in UserDetails | filter:plansearch">
+						            <td>{{$index+1}}</td>
+						            <td>{{ plan.rate}}</td>
+						            <td>{{ plan.period}}</td>
+						            <td>{{plan.vacancy}}</td>
+						            <td>{{plan.cv}}</td>
+						            <td>{{plan.email}}</td>
+						            <td><button class="btn btn-primary"  ng-click="statusplan(plan)">{{plan.status}}</button></td> 
+						            
+						           <td><button class="btn btn-primary"  ui-sref="RA.updateplan({planId: plan._id})"><i class="fa fa-pencil"></i>&nbsp;</button></td>
+						        </tr>
+						    </tbody>
+					</table>
+                </div>
+                
+                <div class="row m-b-20">
+  				<div class="pull-right">  
+    
+                <ul uib-pagination total-items="totalCount" max-size="maxSize" items-per-page="pageSizeSelected" boundary-links="true" rotate="false" num-pages="numPages" direction-links="true" ng-model="pageIndex" ng-change="pageChanged()"></ul>
+                </div> 
+  				<div class="col-md-6">
+  					<button type="button" class="btn btn-primary butn pull-right" ui-sref="RA.Planadd"> Add Plan</button>
+  				</div>
+  				</div> 
+
+</div>

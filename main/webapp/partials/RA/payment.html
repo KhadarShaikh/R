@@ -1,0 +1,55 @@
+
+    <div class="container-fluid">
+
+        <div class="creditCardForm">
+            <div class="heading">
+                <h1>Card Details</h1>
+            </div>
+            <div class="payment">
+                <form ng-submit="cardDetails(card)">
+                	<input type="hidden" ng-model="card.registrationId">
+                   <div class="form-group" id="card-number-field">
+                        <label for="cardNumber">Card Number</label>
+                        <input type="number" limit-to="16" class="form-control" ng-model="card.cardNumber" ng-pattern="^(?:4[0-9]{12}(?:[0-9]{3})?|[25][1-7][0-9]{14}|6(?:011|5[0-9][0-9])[0-9]{12}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|(?:2131|1800|35\d{3})\d{11})$" 
+                        id="cardNumber" limit-to="16" value="numbers-only" required>
+                    </div>
+                    <div class="form-group owner">
+                        <label for="owner">Name</label>
+                        <input type="text" class="form-control" ng-model="card.accountHolderName" id="owner" required>
+                    </div>
+                    <div class="form-group CVV">
+                        <label for="cvv">CVV</label>
+                        <input type="text" limit-to="4" class="form-control" ng-model="card.cvv" id="cvv" min="3" max="4" required>
+                    </div>
+                 
+                    <div class="form-group" id="expiration-date">
+                        <label>Expiration Date</label>
+                        <select  ng-model="card.validMonth" ng-options="x for x in validMonth" required>
+                           <option value="">Month</option>
+                        </select>
+                        <select ng-model="card.validYear" ng-options="y for y in validYear" required >
+                           <option value="">Year</option>
+                        </select>
+                    </div>
+                    <!-- <div class="form-group" id="credit_cards">
+                    
+                        <img src="images/visa.jpg" id="visa">
+                        <img src="images/mastercard.jpg" id="mastercard">
+                        <img src="images/amex.jpg" id="amex">
+                    </div> -->
+                    
+                       <div class="form-group" id="expiration-date">
+                        <label>Card Type</label>
+                        <select  ng-model="card.cardType" ng-options="z for z in cardType" required>
+                           <option value="">Card Type</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group" id="pay-now">
+                        <button type="submit" class="btn btn-default" id="confirm-purchase">Make Payment</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+ 

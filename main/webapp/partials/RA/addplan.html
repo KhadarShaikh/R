@@ -1,0 +1,55 @@
+<div class="container">
+            <div class="row">
+                <div class="col-md-offset-3 col-md-6">
+                  <center><h3>Add Your Plan</h3></center>
+                    <form name="frm" class="frmbgclr" ng-submit="planadd()">
+                    
+                       <div class="form-group">
+                            <label class="control-label" for="Rate">Rate</label><span class="red">*</span>:
+                            <input type="text" class="form-control" name="rate" ng-model="plan.rate" placeholder="Enter Rate" required> 
+                            <span class="help-block" ng-show="frm.rate.$dirty && frm.rate.$error.required">Required.!</span>
+                       </div>
+					  
+                        <div class="form-group">
+                            <label class="control-label" for="Months">Period</label><span class="red">*</span>:
+                            <input type="text" class="form-control" name="Months" ng-model="plan.period" placeholder="Enter Your Period" required> 
+                            <span class="help-block" ng-show="frm.Months.$dirty && frm.Months.$error.required">Required.!</span>
+                       </div>
+                     <input type="hidden" ng-model="plan.plus">
+                      <!-- <div class="form-group">
+                            <label class="control-label" for="Plus">Plus</label>:<span class="red">*</span>
+                            <input type="text" class="form-control" name="Plus"  ng-model="plan.plus" placeholder="Enter Plus" required> 
+                            <span class="help-block" ng-show="frm.Plus.$dirty && frm.Plus.$error.required">Required.!</span>
+                            
+                        </div> -->
+                       <div class="form-group">
+                            <label class="control-label" for="Vacancy">Vacancy</label><span class="red">*</span>:
+                            <input type="text" class="form-control" name="Vacancy"  ng-model="plan.vacancy" placeholder="Enter Vacancy" required> 
+                            <span class="help-block" ng-show="frm.Vacancy.$dirty && frm.Vacancy.$error.required">Required.!</span>
+                            
+                        </div>
+
+                        <div class="form-group">
+                          <label class="control-label" for="CV">CV's</label><span class="red">*</span>:
+                          <input type="text" class="form-control" name="CV" ng-model="plan.cv"  placeholder="Enter your no of CV's" required>
+                          <span class="help-block" ng-show="frm.CV.$dirty && frm.CV.$error.required">Required.!</span>
+                          
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="control-label" for="Emails">E-mails</label><span class="red">*</span>:
+                            <input type="text" class="form-control" name="Emails" ng-model="plan.email" placeholder="Enter Your no of Emails" required> 
+                            <span class="help-block" ng-show="frm.Emails.$dirty && frm.Emails.$error.required">Required.!</span>
+                       </div>
+					   
+                        <b class="text-center"><span class="red">* fields are mandatory</span></b>
+                        
+                        <div class="form-group pull-right">
+                          <button type="submit" class="btn btn-primary" ui-sref="RA.plan" >Back</button>
+                          <button type="submit" class="btn btn-primary"  >Submit</button>
+                          </div>     
+                    </form>
+                </div>
+
+            </div>
+          </div>

@@ -1,0 +1,195 @@
+
+<div class="container-fluid m-t-50">
+		<div class="row sea">
+	  <div class="container">
+		<h4 style="color: #337ab7">Search Your Resource :</h4>
+		<div class="col-sm-3">
+			<oi-select ng-model="search.primarySkills" multiple oi-options="v for v in skills"  placeholder="Skills Ex:html"required>
+              </oi-select>	
+		</div>
+		<div class="col-sm-3">
+			<input type="text" ifEmpty class="form-control" ng-model="search.jobCategory"
+				placeholder="job Category">
+		</div>
+		<div class="col-sm-2">
+			<input type="text" class="form-control" ng-model="search.city"
+				placeholder="Location">
+		</div>
+		<div class="col-sm-2">
+			<input type="text" class="form-control"
+				ng-model="search.totalExperience" placeholder="Experience">
+		</div>
+		<div class="col-sm-2">
+			<button type="button" class="btn btn-primary" ng-click="dynamicsearch(search.primarySkills,search.jobCategory,search.city,search.totalExperience)">
+				<i class="fa fa-search"></i>&nbsp;Search
+			</button>
+		</div>
+      </div>
+     
+	</div>
+		
+      </div>	
+	<div class="container m-t-20">
+		<div class="row">
+
+					<div class="col-sm-3">	
+					
+						
+						
+	<div class="">
+				<uib-accordion close-others="oneAtATime">
+                <div uib-accordion-group class="panel-default"
+					is-open="status.Skills">
+					<uib-accordion-heading> Skills <i
+						class="pull-right glyphicon"
+						 ng-class="{'glyphicon glyphicon-minus': status.Skills, 'glyphicon glyphicon-plus': !status.open}" ng-click="allListsfunc()"></i>
+					</uib-accordion-heading>
+					<ul class="list-group" ng-repeat="list in skillslist">
+					  <input type="checkbox" checklist-model="search1.skills" checklist-value="s" ng-click="search1()"> {{s}} &nbsp;
+
+
+					</ul>
+				</div>
+					<div uib-accordion-group class="panel-default" is-open="status.Job ">
+					<uib-accordion-heading> Job Category <i
+						class="pull-right glyphicon"
+						ng-class="{'glyphicon glyphicon-minus': status.Job , 'glyphicon glyphicon-plus': !status.open}" ng-click="jobcategoryfunc()"></i>
+					</uib-accordion-heading>
+					<ul class=" list-group" ng-repeat="c in Jobc">
+					 <input type="checkbox" checklist-model="search1.jobCategory" checklist-value="c"> {{c}} &nbsp;
+					</ul>
+				</div>
+				<div uib-accordion-group class="panel-default"
+					is-open="status.Location">
+					<uib-accordion-heading> Location<i
+						class="pull-right glyphicon"
+						ng-class="{'glyphicon glyphicon-minus': status.Location, 'glyphicon glyphicon-plus': !status.open}" ng-click="locationfunc()"></i>
+					</uib-accordion-heading>
+
+					<ul class=" list-group" ng-repeat="x in location">
+					    <input type="checkbox" checklist-model="search1.city" checklist-value="x"> {{x}} &nbsp;
+					</ul>
+				</div>			
+				<div uib-accordion-group class="panel-default"
+					is-open="status.Experience">
+					<uib-accordion-heading> Experience <i
+						class="pull-right glyphicon"
+						ng-class="{'glyphicon glyphicon-minus': status.Experience, 'glyphicon glyphicon-plus': !status.open}" ng-click="experiencefunc()"></i>
+					</uib-accordion-heading>
+					<ul class=" list-group" ng-repeat="e in experience">
+					<input type="checkbox" checklist-model="search1.totalExperience" checklist-value="e"> {{e}}years &nbsp;
+				
+					</ul>
+				</div>
+			 	<div uib-accordion-group class="panel-default"
+					is-open="status.company">
+					<uib-accordion-heading> Top Vendors <i
+					
+						class="pull-right glyphicon"
+						ng-class="{'glyphicon glyphicon-minus': status.company, 'glyphicon glyphicon-plus': !status.open}" ng-click="companyfunc()"></i>
+					</uib-accordion-heading>
+					<ul class=" list-group" ng-repeat="tc in company">
+						<input type="checkbox" checklist-model="search1.registrationType" checklist-value="tc"> {{tc}} &nbsp;
+						
+					</ul>
+				</div>
+				<div uib-accordion-group class="panel-default"
+					is-open="status.company1">
+					<uib-accordion-heading> Budget <i
+						class="pull-right glyphicon"
+						ng-class="{'glyphicon glyphicon-minus': status.company, 'glyphicon glyphicon-plus': !status.open}" ng-click="budgetfunc()"></i>
+					</uib-accordion-heading>
+					<ul class=" list-group" ng-repeat="bc in budget">
+						<input type="checkbox" checklist-model="search1.registrationType" checklist-value="bc"> {{bc}} &nbsp;
+						
+					</ul>
+				</div>
+				<br>
+				<center>
+					<button type="submit" class="btn primary">Clear filters</button>
+					<button type="submit" class="btn primary" ng-click="search1(search1)">Submit</button>
+				</center>
+			</div>
+		</div>	
+
+					<div class="col-sm-8">
+						<div ng-repeat="x in resourcelist" class="box">
+						
+							
+							<div class="header-box">
+								<p>
+									<a ui-sref="customer.resourcesummary({resourceId:x._id})"><span title="Job Category">{{x.jobCategory}}</span><span title="Location">-{{x.currentLocation}}</span><span title="Experience">({{x.yearsOfExperience}}-{{x.monthsOfExperience}})</span></a>
+								</p>
+							</div>
+								<div class="row">
+							<div class="companyName-box col-sm-8">
+								<p title="Company Name">{{x.companyName}}
+								<p>
+							</div>
+							<div class="col-sm-4">
+							<span style="" class="iconcolor" >&#x20B9;</span>&nbsp;:<span style="" class="textcolor" title="Budget">{{x.budget}} /</span><span style="" class="textfont">{{x.rate}}</span> +<span style="" class="taxes"> Taxes </span></span>
+							</div>
+							</div>
+							<div class="description-box">
+								<p title="Resource Name"><i class="fa fa-user-circle-o" aria-hidden="true"></i>&nbsp;&nbsp;{{x.firstName}}</p>
+							</div>
+							<div class="row">
+							<div class="description-box col-sm-8">
+								<p>
+									<i class="glyphicon glyphicon-envelope" > </i>&nbsp;&nbsp;<span title="Vendor EmailId">{{x.emailId}}&nbsp;</span>
+								</p>
+							</div>
+							<div class="col-sm-4">
+							<i
+										class="fa fa-phone iconcolor " ></i>&nbsp;:<span class="textcolor" title="Vendor Contact Number">{{x.mobileNumber}}</span>
+							</div>
+							</div>
+							
+							<div class="description-box">
+								<p>
+									<i class="glyphicon glyphicon-calendar"></i>&nbsp;{{x.availability}}
+								</p>
+							</div>
+							
+							<div class="Skills-box">
+								<p>
+									Skills:&nbsp;{{x.primarySkills.toLowerCase() }}{{x.secondarySkills.toLowerCase() }}<!-- <a class=" btn pull-right"
+										ng-click="requirementsearch(x._id,x.primarySkills,x.jobCategory,x.currentLocation,x.yearsOfExperience)">
+									Search requirement
+									</a> -->
+											
+								</p>
+								
+							</div>
+					<div class="Skills-box">
+						<p>
+								&nbsp;&nbsp;SoftLock&nbsp; :<a
+								class="btn btn-sm btn-success butn"
+								ng-click="softlockResource(x)">{{x.softLock}}</a>
+							&nbsp;&nbsp;HardLock &nbsp;:<a class="btn btn-sm btn-danger butn"
+								ng-click="hardlockResource(x)">{{x.hardLock}}</a>
+								&nbsp;&nbsp;&nbsp;&nbsp; <!-- <a type="button" class="btn btn-sm btn-primary"  ng-click="filedownload(x._id)"   file-download="myBlobObject"  file-name="'DownloadResume.docx'" ><i class="fa fa-download"></i>&nbsp;Download Resume</a> -->
+								<!-- <div class="col-md-6">
+<li><img ng-src="data:image/jpeg;base64,{{user.file1_data}}"
+style="width: 280px; height: 280px;" class="img-responsive"
+ng-model="admin" /></li>
+<li>{{user.file1}}</li>
+</div> -->
+						</p>
+						
+					</div>
+							 
+						</div>
+				
+				
+			</div>
+		</div>
+		<div class="pull-right">  
+     <!-- <pagination total-items="totalcount" ng-change="pageChanged()" items-per-page="pageSizeSelected" direction-links="true"
+     ng-model="pageIndex" max-size="maxSize" class="pagination" boundary-links="true" rotate="false" num-pages="numPages"></pagination> -->
+               <!--  <a class="btn btn-primary">Page: {{pageIndex}} / {{pageSizeSelected}}</a>   -->
+                <ul uib-pagination total-items="totalCount" max-size="maxSize" items-per-page="pageSizeSelected" boundary-links="true" rotate="false" num-pages="numPages" direction-links="true" ng-model="pageIndex" ng-change="pageChanged()"></ul>
+                </div>
+	</div>
+</div>
+</div>

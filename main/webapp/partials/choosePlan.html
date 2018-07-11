@@ -1,0 +1,20 @@
+	 <div class="container-fulid planImage" ng-init="getplans()">
+	  <div class="container">
+	  <br></br></br><br>
+			    <h3 style="color:#fff" class="pos">Choose Your Special Offer :</h3>
+			<div class="col-sm-2  plancols" ng-repeat="x in UserDetails">
+			 <div class="panel panel-default " >
+			<div class="panel-heading"> <h4 class="text-center"><i class="fa fa-rupee"></i>&nbsp;{{x.rate}}</h4></div>
+			  <div class="panel-body">
+			   				<p class="text-center">{{x.period}}</p>
+			                <p class="text-center">{{x.plus}}</p>
+							<p class="text-center">{{x.vacancy}}</p>
+					        <p class="text-center">{{x.cv}}</p>
+					        <p class="text-center">{{x.email}}</p>
+
+</div>
+  <div class="panel-footer"><center><button class="btn btn-primary" data-toggle="tab" value="{{x._id}}" ng-click="plan(x._id)" ui-sref="Register">BUY NOW</button></center></div>
+</div> 
+ </div>
+ 
+ </div></div>

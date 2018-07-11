@@ -1,0 +1,94 @@
+
+<div class="container-fluid m-t-50">
+
+	  <!-- <div class="row sea">
+	<div class="container">		
+	  <h4 style="color: #337ab7">Search Your Requirement :</h4>
+		<div class="col-sm-3">
+
+			<oi-select ng-model="search.skills" multiple oi-options="v for v in skills"  placeholder="Skills Ex:html"required>
+
+              </oi-select>
+		</div>
+		<div class="col-sm-3">
+			<input type="text" class="form-control" ng-model="search.jobCategory"
+				placeholder="job Category">
+		</div>
+		<div class="col-sm-2">
+			<input type="text" class="form-control" ng-model="search.jobLocation"
+				placeholder="Location">
+		</div>
+		<div class="col-sm-2">
+			<input type="text" class="form-control" ng-model="search.experience"
+				placeholder="Experience">
+		</div>
+
+		<div class="col-sm-2">
+			<button type="button" class="btn btn-primary">
+				<i class="fa fa-search"></i>&nbsp;Search
+			</button>
+		</div>
+      </div> 
+</div>-->
+	<div class="container ">
+	<div class="col-md-offset-1 col-md-10 col-md-offset-1 bgcolor">
+		<h1 class="text-center heading">Profile Summary</h1>
+		<div class=" col-md-offset-1 col-md-8">
+
+
+			<h3 class="fon color">
+				<i class="fa fa-user-circle-o color"></i>&nbsp;{{resource.firstName}}&nbsp;{{resource.lastName}}&nbsp;{{resource.jobCategory}}({{resource.yearsOfExperience}}-{{resource.monthsOfExperience}})  
+			</h3>
+			<h4 class="fon color">
+				<i class="fa fa-building color"></i>&nbsp;{{resource.companyName}} {{resource.currentLocation}} {{resource.resId}}
+			</h4>
+			<h5 class="fon color">
+				<i class="fa fa-rupee color"></i>&nbsp;{{resource.budget}}/{{resource.rate}}+{{resource.gst}}
+			</h5>
+			<!-- <button type="button" class="btn btn-success">
+				<i class="glyphicon glyphicon-ok "></i>&nbsp;Hire Me
+			</button>
+			<button type="button" class="btn btn-primary">
+				<i class="fa fa-search"></i>&nbsp;Search Requirement
+			</button> -->
+			<button type="button" class="btn btn-danger" ui-sref="vendor.resourcelist">
+				<i class="	glyphicon glyphicon-share"></i>&nbsp;Go Back
+			</button>
+			<hr>
+
+
+			<h4  class="jd">About Me</h4>
+
+				<p class="para"><i class="fa fa-user-circle-o color"></i>&nbsp;&nbsp;Name : {{resource.firstName}}&nbsp;{{resource.lastName}}</p>
+				<p class="para"><i class="fa fa-bank color"></i>&nbsp;&nbsp;CompanyName : {{resource.companyName}}</p>
+				<p class="para"><i class="fa fa-black-tie color"></i>&nbsp;Job Category : {{resource.jobCategory}}</p>
+				<p class="para"><i class="glyphicon glyphicon-briefcase color"></i>&nbsp;&nbsp;Experience : {{resource.yearsOfExperience}}-{{resource.monthsOfExperience}}</p>
+				<p class="para"><i class="glyphicon glyphicon-map-marker color"></i>&nbsp;&nbsp;Job Location : {{resource.currentLocation}}</p>
+				<p class="para"><i class="fa fa-rupee color"></i>&nbsp;&nbsp;Salary : {{resource.budget}}/{{resource.rate}}+{{resource.gst}}</p>	
+				<p class="para"><i class="glyphicon glyphicon-screenshot color"></i>&nbsp;&nbsp;Preferred Location : {{resource.preferredLocation}}</p>	
+				
+			
+			<hr>
+			<h4 class="jd">Technical Skills </h4>
+
+			<p class="para"><i class="fa fa-tags color"></i>&nbsp;&nbsp;Skills:&nbsp;{{resource.primarySkills}},{{resource.secondarySkills}}</p>
+	
+			<hr>
+			<h4 class="jd">Contact Details</h4>
+			<p class="para"><i class="glyphicon glyphicon-envelope color"></i>&nbsp;&nbsp;Email Id&nbsp;:{{resource.emailId}}</p>
+			<p class="para"><i class="fa fa-mobile color"></i>&nbsp;&nbsp;Mobile Number&nbsp;:+91-{{resource.mobileNumber}}</p>
+			<p class="para"><i class="glyphicon glyphicon-map-marker color"></i>&nbsp;&nbsp;Address&nbsp;:{{resource.currentLocation}},{{resource.state}},{{resource.country}}</p>
+			
+			
+			
+					
+
+		</div>
+	</div>
+</div>
+
+       </div>
+	
+          
+          
+                     

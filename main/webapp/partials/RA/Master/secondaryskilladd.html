@@ -1,0 +1,19 @@
+<div class="container">
+		<div class="col-md-offset-3 col-md-6">
+			<h3 class="text-center">Add Secondary Skills</h3>
+			<form ng-submit="secondaryadd()" class="frmbgclr" name="myForm">
+						<div class="form-group">
+							<label class="control-label" for="secondarySkills">Secondary Skills:</label>
+							<input type="text" class="form-control" name="secondarySkills" ng-model="secondadd.secondarySkills" required placeholder="Enter Your Join" >	
+						    <span class="help-block" ng-show="myForm.secondarySkills.$invalid && myForm.secondarySkills.$touched ||myForm.secondarySkills.$invalid && myForm.secondarySkills.$dirty">
+                            <span class="help-block" ng-show="myForm.secondarySkills.$error.required">secondarySkills is required </span>
+                            </span>
+						</div>
+						<div class="pull-right">
+								<button type="submit" class="btn btn-primary" ui-sref="RA.secondaryskill">Back</button>
+								<button type="submit" class="btn btn-primary" ng-disabled="myForm.$invalid">Submit</button>
+						</div>
+						
+			</form>
+     </div>
+</div>

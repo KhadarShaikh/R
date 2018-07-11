@@ -1,0 +1,91 @@
+<nav class="navbar navabar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand n"><b>Resource Adda</b></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="dropdown "><a class="dropdown-toggle" data-toggle="dropdown" href="#">Companies <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Browse By Companies</a></li>
+          <li><a ui-sref="aboutCustomers">About Customers</a></li>
+        </ul>
+      </li>
+      
+      
+      
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Vendors <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Browse By Vendors</a></li>
+          <li><a ui-sref="aboutVendors">About Vendors</a></li>
+       	</ul>
+      </li>
+      <li><a ui-sref="Plan">Subscription Plans</a></li>
+      <li><a ui-sref="Service">Services</a></li>
+      <li><a ui-sref="aboutRA">About Resource Adda</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      
+      <li><a ui-sref="login"><span class="glyphicon glyphicon-log-in"></span> Login/Register</a></li>
+    </ul>
+  </div>
+</nav>
+  
+<div class="container" style="margin-top:50px">
+    
+    <div class="row">
+      <div class="col-md-3">
+          <h4>Top Customers</h4>
+           <div  ng-repeat="x in customersList">    
+	        <p>{{x}}</p>          
+	        </div>  
+	        </div>          
+          <!-- <h4><a href="https://www.persistent.com/" target="_blank">Persistent</a></h4>
+          <h4><a href="www.gspann.com/" target="_blank">Gspann</a></h4>
+          <h4><a href="https://www.mphasis.com/" target="_blank">Mphasis</a></h4>
+          <h4><a href="https://www.happiestminds.com/" target="_blank">Happiest Minds</a></h4>
+          <h4><a href="https://www.cognizant.com/" target="_blank">Cognizant</a></h4>
+          <h4><a href="https://www.tcs.com/" target="_blank">TCS</a></h4>
+          <h4><a href="https://www.realpage.com/" target="_blank">Real Page</a></h4>
+          <h4><a href="https://www.evoketechnologies.com/" target="_blank">Evoke Technologies</a></h4>
+          <h4><a href="https://www.infogain.com/" target="_blank">Infogain</a></h4>
+          <h4><a href="https://www.capgemini.com/" target="_blank">Capgemini</a></h4>
+          <h4><a href="https://www.ust-global.com/" target="_blank">UST Global</a></h4>
+          <h4><a href="www.expansioncompany.com/" target="_blank">Expansion</a></h4>
+          <h4><a href="https://www.infosys.com/" target="_blank">Infosys</a></h4>
+          <h4><a href="www.virtusa.com/" target="_blank">Virtusa</a></h4>
+          <h4><a href="https://www.sapientindiacareers.com/" target="_blank">Sapient</a></h4>
+          <h4><a href="https://www.qvantel.com/" target="_blank">Qvantel</a></h4>
+          <h4><a href="https://www.globallogic.com/" target="_blank">Global Logic</a></h4> -->
+
+      </div>
+      <div class="col-md-3"> 
+        <h4>Top Companies</h>
+        <h4>epam</h4>
+        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+        
+      </div>
+      <div class="col-md-3"> 
+        <h4>Top Vendors</h4>
+         <h4>epam</h4>
+          <p>"Hackathons are just one of the tools within our innovation practice that represents our engineering-focused culture. These events help us add value to our client's business, while nurturing the business mindset of our engineering teams." Dmytro Seredenko VP, Co-Head NA/West, EPAM ...</p>
+      </div>
+      
+      <div class="col-md-3" > 
+       <h4>Top Vendors</h4>
+       <div  ng-repeat="x in vendorsList">    
+        <p>{{x}}</p>          
+        </div>  
+        </p>
+        </div>
+    </div>
+  </div>
+
+  
+    <div class="paymentMode" ><p>Buy Safely with ResourceAdda.com<br>
+      <span>We support secure payment methods</span></p><img src="images/paymentSprite.png">
+    </div>
+	<div class="footer">
+	  <p> &copy; 2018 ResourceAdda. All Rights Reserved. </p>
+	  <a href="https://twitter.com/ResourceAdda.com" class="social-icon twitter">Twitter</a>
+	  <a href="https://facebook.com/ResourceAdda.com" class="social-icon facebook">Facebook</a>
+	</div>

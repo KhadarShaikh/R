@@ -1,0 +1,19 @@
+<div class="container">
+		<div class="col-md-offset-3 col-md-6">
+		<h3 class="text-center">Update Job Category</h3>
+			<form ng-submit="putjob()" class="frmbgclr" name="myForm">
+						<div class="form-group">
+							<label class="control-label" for="jobCategory">Job Category:</label>
+							<input type="text" class="form-control" name="jobCategory" ng-model="putdata.jobCategory" required >	
+						    <span class="help-block" ng-show="myForm.jobCategory.$invalid && myForm.jobCategory.$touched ||myForm.jobCategory.$invalid && myForm.jobCategory.$dirty">
+                            <span class="help-block" ng-show="myForm.jobCategory.$error.required">jobCategory is required </span>
+                            </span>
+                           		</div>
+						<div class="pull-right">
+							<button type="submit" class="btn btn-primary" ui-sref="RA.jobcategory">Back</button>
+						 <button type="submit" class="btn btn-primary" ng-disabled="myForm.$invalid">Submit</button>
+						</div>
+						
+			</form>
+     </div>
+</div>

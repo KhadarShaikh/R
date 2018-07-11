@@ -1,0 +1,72 @@
+ <div  class="container m-t-50">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="col-md-6">
+					<div class="form-group">
+						<label class="control-label col-md-4 text-center" for = "">Select Type:</label>
+						<div class="col-md-6">
+							<select class="form-control" ng-model="selecttype" ng-options="x for x in type" ng-change="resourcemaplist()">
+								<option value="">select</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="form-group">
+						<label class="control-label col-md-4 text-center" for = "">Select Type:</label>
+						<div class="col-md-6">
+							<select class="form-control" ng-model="companyName1" ng-change="companyid()" ng-options="c for c in companyNameList">
+								<option value="">select</option>
+							</select>
+						</div>
+						<div class="col-md-2">
+							<button class="btn btn-primary butn" value="search" ng-click="submitdata();">Search</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div ng-show="resourcelist">
+        <div class="table-responsive m-t-30">
+           <table class="table text-center">
+                      <thead>
+                          <tr>
+                              <th>S.No</th>
+                              <th>Company Name</th>
+                               <th>First Name</th>
+                               <th>Email</th>
+                               <th>Mobile</th>
+                               <th>Skills</th>
+                               <th>Experience</th>
+                               <th>Avaliability</th>
+                               <th>Preferred Location</th>
+							   <th>City</th>
+                               <!-- <th>Edit</th> -->
+                           </tr>
+                    </thead>
+                     <tbody>
+                         <tr ng-repeat="x in resourcemap123">
+                             <td>{{$index+1}}</td>
+                             <td>{{x.companyName}}</td>
+                              <td>{{x.firstName}}</td>
+                              <td>{{x.emailId}}</td>
+                              <td>{{x.mobileNumber}}</td>
+                              <td>{{x.skills}}</td>
+                              <td>{{x.totalExperience}}</td>
+                              <td>{{x.availability}}</td>
+                              <td>{{x.preferredLocation}}</td>
+							  <td>{{x.city}}</td>
+                               <!-- <td><a type="button" class="btn btn-primary butn" ui-sref=""><i class="fa fa-pencil" aria-hidden="true"></i></a></td> -->
+                                           
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                  </div>
+                                  <div class="row">
+                                  <div class="col-md-6">
+                                      <button type="button" class="btn btn-primary">Prev</button> 1/13 <button type="button" class="btn btn-primary">Next</button>
+                                  </div>
+                                  
+                                  </div>
+                              </div>
+							  </div>
